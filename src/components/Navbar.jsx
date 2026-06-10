@@ -1,0 +1,58 @@
+import { useState, useEffect } from 'react'
+
+const links = ['About', 'Skills', 'Projects', 'Contact']
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-950/90 backdrop-blur border-b border-gray-800' : ''}`}>
+      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <span className="text-violet-400 font-semibold tracking-wide text-lg">Surya Kadiyam</span>
+
+        <ul className="hidden md:flex gap-8">
+          {links.map(l => (
+            <li key={l}>
+              <a href={`#${l.toLowerCase()}`} className="text-gray-400 hover:text-violet-400 transition-colors text-sm tracking-wide">
+                {l}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/resume.pdf" download className="text-sm px-4 py-1.5 border border-violet-500 text-violet-400 rounded hover:bg-violet-500 hover:text-white transition-colors">
+              Resume
+            </a>
+          </li>
+        </ul>
+
+        <button className="md:hidden text-gray-400 hover:text-white" onClick={() => setMenuOpen(o => !o)}>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {menuOpen
+              ? <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              : <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />}
+          </svg>
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div className="md:hidden bg-gray-900 border-t border-gray-800 px-6 py-4 flex flex-col gap-4">
+          {links.map(l => (
+            <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setMenuOpen(false)} className="text-gray-300 hover:text-violet-400 transition-colors">
+              {l}
+            </a>
+          ))}
+          <a href="/resume.pdf" download className="text-sm px-4 py-2 border border-violet-500 text-violet-400 rounded text-center hover:bg-violet-500 hover:text-white transition-colors">
+            Resume
+          </a>
+        </div>
+      )}
+    </nav>
+  )
+}
