@@ -36,7 +36,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-gray-100 focus:outline-none focus:border-violet-500 transition-colors"
-                  placeholder="David Conner"
+                  placeholder="Dave Conner"
                 />
               </div>
               <div>
