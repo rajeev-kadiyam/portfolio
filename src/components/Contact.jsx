@@ -36,7 +36,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-gray-100 focus:outline-none focus:border-violet-500 transition-colors"
-                  placeholder="John Doe"
+                  placeholder="David Conner"
                 />
               </div>
               <div>
@@ -48,7 +48,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-gray-100 focus:outline-none focus:border-violet-500 transition-colors"
-                  placeholder="john@example.com"
+                  placeholder="dave@example.com"
                 />
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function Contact() {
                 required
                 rows={5}
                 className="w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-3 text-gray-100 focus:outline-none focus:border-violet-500 transition-colors resize-none"
-                placeholder="Tell me about your project..."
+                placeholder="Why do you wanna connect?"
               />
             </div>
             <button
