@@ -3,7 +3,7 @@ export default function Hero() {
     <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
       <p className="text-violet-400 text-sm tracking-widest uppercase mb-4">Data Science Student</p>
       <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
-        Hi, I'm <span className="text-violet-400">Surya Kadiyam</span>
+        Hi, I'm <span className="text-violet-400">Rajeev Kadiyam</span>
       </h1>
       <p className="text-gray-400 text-lg md:text-xl max-w-2xl mb-10">
         A data science student passionate about turning raw data into meaningful insights through machine learning, analytics, and visualization.
